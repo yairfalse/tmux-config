@@ -55,7 +55,7 @@ if tmux has-session -t $SESSION_NAME 2>/dev/null; then
     tmux attach-session -t $SESSION_NAME
 else
     echo "Creating new WGO development session..."
-    tmux new-session -d -s $SESSION_NAME -c ~/personal/wgo
+    tmux new-session -d -s $SESSION_NAME -c ~/projects/wgo
     tmux source-file ~/.tmux/dev-session.conf
     tmux attach-session -t $SESSION_NAME
 fi
@@ -69,7 +69,7 @@ cat >> ~/.bash_profile << 'EOF'
 
 # TMUX aliases for WGO development
 alias wgo-dev='~/.tmux/wgo-dev.sh'
-alias claude-session='tmux new-session -s claude -c ~/personal/wgo "claude-code"'
+alias claude-session='tmux new-session -s claude -c ~/projects/wgo "claude-code"'
 alias tmux-reload='tmux source-file ~/.tmux.conf'
 EOF
 
